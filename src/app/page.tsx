@@ -1,8 +1,9 @@
 import { Badge } from "@/components/ui/badge";
 import { Typography } from "@/components/ui/typography";
-import { ArrowUpRight, FileText, Mail } from "lucide-react";
+import { ArrowUpRight, FileText } from "lucide-react";
 import { Facebook, Github, Linkedin } from "@/components/ui/icons";
-import { ProjectCarousel } from "@/components/ui/project-carousel";
+// import { ProjectCarousel } from "@/components/ui/project-carousel";
+import { CopyButton } from "@/components/ui/copy-button";
 
 const TECH_STACK = [
   {
@@ -41,6 +42,7 @@ const TECH_STACK = [
 const PROJECTS = [
   {
     title: "Statement-of-Account (SOA) Manager",
+    type: "Freelance",
     role: "Full-Stack Engineer",
     period: "May 2026 - Present",
     images: [
@@ -51,6 +53,7 @@ const PROJECTS = [
   },
   {
     title: "Talentados: Applicant-Tracking System (ATS)",
+    type: "School",
     role: "Backend Engineer",
     period: "May 2026 - Aug 2026",
     images: [
@@ -61,6 +64,7 @@ const PROJECTS = [
   },
   {
     title: "Taftics: Establishment Review App",
+    type: "School",
     role: "Full-Stack Engineer",
     period: "Jan 2026 - Apr 2026",
     images: [
@@ -71,6 +75,7 @@ const PROJECTS = [
   },
   {
     title: "Discord Voice Chat Analytics Bot",
+    type: "Personal",
     role: "Backend Engineer",
     period: "Sep 2026 - Present",
     images: [
@@ -98,11 +103,6 @@ const CONNECT_LINKS = [
     icon: Facebook,
   },
   {
-    name: "Email",
-    href: "mailto:martinmanalo5@gmail.com",
-    icon: Mail,
-  },
-  {
     name: "Resume",
     href: "/RESUME.pdf",
     icon: FileText,
@@ -115,8 +115,9 @@ export default function Home() {
       <div className="flex flex-col gap-5">
         <Typography variant={"h1"}>Hello!</Typography>
         <Typography variant={"p"}>
-          I&apos;m <span className="text-foreground/75">Martin</span>, an
-          undergrad CS student at De La Salle University, based in the{" "}
+          I&apos;m <span className="text-foreground/75">Martin</span>,
+          third-year computer science student at De La Salle University
+          (3.64/4.00 GPA), based in the{" "}
           <span className="text-foreground/75">Philippines</span>, aiming to
           become a software/design engineer in the industry.
         </Typography>
@@ -129,29 +130,29 @@ export default function Home() {
 
       <div className="flex flex-col gap-5">
         <Typography variant={"h1"}>projects</Typography>
-        <div className="flex flex-col gap-8">
-          {PROJECTS.map(({ title, role, period, images }) => (
+        <div className="flex flex-col gap-5">
+          {PROJECTS.map(({ title, type, role, period }) => (
             <div
               key={title}
-              className="group flex flex-col gap-3 cursor-pointer"
+              className="group flex flex-col gap-1 cursor-pointer"
             >
-              <ProjectCarousel images={images} projectTitle={title} />
-              <div className="flex flex-col gap-1">
-                <div className="flex flex-row items-center">
-                  <span className="inline-flex items-center justify-center overflow-hidden w-0 opacity-0 -translate-x-1.5 transition-all duration-200 ease-out group-hover:w-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:mr-1">
-                    <ArrowUpRight className="size-3.5 text-foreground shrink-0" />
-                  </span>
-                  <Typography
-                    variant={"h4"}
-                    className="transition-transform duration-200 text-foreground/75 group-hover:text-foreground"
-                  >
-                    {title}
-                  </Typography>
-                </div>
-                <div className="flex flex-row items-center justify-between">
-                  <Typography variant={"h3"}>{role}</Typography>
-                  <Typography variant={"h3"}>{period}</Typography>
-                </div>
+              {/* <ProjectCarousel images={images} projectTitle={title} /> */}
+              <div className="flex flex-row items-center">
+                <span className="inline-flex items-center justify-center overflow-hidden w-0 opacity-0 -translate-x-1.5 transition-all duration-200 ease-out group-hover:w-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:mr-1">
+                  <ArrowUpRight className="size-3.5 text-foreground shrink-0" />
+                </span>
+                <Typography
+                  variant={"h4"}
+                  className="transition-transform duration-200 text-foreground/75 group-hover:text-foreground"
+                >
+                  {title}
+                </Typography>
+              </div>
+              <div className="flex flex-row items-center justify-between">
+                <Typography variant={"h3"}>
+                  {type}, {role}
+                </Typography>
+                <Typography variant={"h3"}>{period}</Typography>
               </div>
             </div>
           ))}
@@ -184,7 +185,12 @@ export default function Home() {
         <Typography variant={"p"}>
           I&apos;m open to work whether it be internships or short-term
           projects. If you need something built that would make your life
-          easier, feel free to reach out!
+          easier, feel free to reach out! The best way to reach me is through my
+          email,{" "}
+          <CopyButton text="martinmanalo5@gmail.com">
+            martinmanalo5@gmail.com
+          </CopyButton>
+          , or any of my social links below.
         </Typography>
         <div className="flex flex-row items-center gap-4 flex-wrap">
           {CONNECT_LINKS.map(({ name, href, icon: Icon }) => (
