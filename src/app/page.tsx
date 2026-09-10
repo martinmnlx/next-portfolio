@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Typography } from "@/components/ui/typography";
 import { ArrowUpRight, FileText, Mail } from "lucide-react";
 import { Facebook, Github, Linkedin } from "@/components/ui/icons";
+import { ProjectCarousel } from "@/components/ui/project-carousel";
 
 const TECH_STACK = [
   {
@@ -42,21 +43,41 @@ const PROJECTS = [
     title: "Statement-of-Account (SOA) Manager",
     role: "Full-Stack Engineer",
     period: "May 2026 - Present",
+    images: [
+      { title: "Account Dashboard" },
+      { title: "Statement Generation" },
+      { title: "Payment Ledger" },
+    ],
   },
   {
     title: "Talentados: Applicant-Tracking System (ATS)",
     role: "Backend Engineer",
     period: "May 2026 - Aug 2026",
+    images: [
+      { title: "Applicant Pipeline" },
+      { title: "Resume Parser" },
+      { title: "Evaluation Matrix" },
+    ],
   },
   {
     title: "Taftics: Establishment Review App",
     role: "Full-Stack Engineer",
     period: "Jan 2026 - Apr 2026",
+    images: [
+      { title: "Establishment Directory" },
+      { title: "Review Feed" },
+      { title: "Interactive Taft Map" },
+    ],
   },
   {
     title: "Discord Voice Chat Analytics Bot",
     role: "Backend Engineer",
     period: "Sep 2026 - Present",
+    images: [
+      { title: "Voice Session Heatmap" },
+      { title: "Member Leaderboards" },
+      { title: "Analytics Overview" },
+    ],
   },
 ];
 
@@ -108,26 +129,29 @@ export default function Home() {
 
       <div className="flex flex-col gap-5">
         <Typography variant={"h1"}>projects</Typography>
-        <div className="flex flex-col gap-5">
-          {PROJECTS.map(({ title, role, period }) => (
+        <div className="flex flex-col gap-8">
+          {PROJECTS.map(({ title, role, period, images }) => (
             <div
               key={title}
-              className="group flex flex-col gap-1 cursor-pointer"
+              className="group flex flex-col gap-3 cursor-pointer"
             >
-              <div className="flex flex-row items-center">
-                <span className="inline-flex items-center justify-center overflow-hidden w-0 opacity-0 -translate-x-1.5 transition-all duration-200 ease-out group-hover:w-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:mr-1">
-                  <ArrowUpRight className="size-3.5 text-foreground shrink-0" />
-                </span>
-                <Typography
-                  variant={"h4"}
-                  className="transition-transform duration-200 text-foreground/75 group-hover:text-foreground"
-                >
-                  {title}
-                </Typography>
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <Typography variant={"h3"}>{role}</Typography>
-                <Typography variant={"h3"}>{period}</Typography>
+              <ProjectCarousel images={images} projectTitle={title} />
+              <div className="flex flex-col gap-1">
+                <div className="flex flex-row items-center">
+                  <span className="inline-flex items-center justify-center overflow-hidden w-0 opacity-0 -translate-x-1.5 transition-all duration-200 ease-out group-hover:w-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:mr-1">
+                    <ArrowUpRight className="size-3.5 text-foreground shrink-0" />
+                  </span>
+                  <Typography
+                    variant={"h4"}
+                    className="transition-transform duration-200 text-foreground/75 group-hover:text-foreground"
+                  >
+                    {title}
+                  </Typography>
+                </div>
+                <div className="flex flex-row items-center justify-between">
+                  <Typography variant={"h3"}>{role}</Typography>
+                  <Typography variant={"h3"}>{period}</Typography>
+                </div>
               </div>
             </div>
           ))}
