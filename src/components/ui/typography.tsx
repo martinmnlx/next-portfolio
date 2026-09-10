@@ -7,13 +7,14 @@ import { cn } from "@/lib/utils";
 const typographyVariants = cva("", {
   variants: {
     variant: {
-      h1: "scroll-m-20 text-sm font-mono tracking-wider lowercase text-foreground",
-      h2: "scroll-m-20 text-sm font-mono tracking-wider text-foreground/75",
-      h3: "scroll-m-20 text-xs font-mono tracking-wider text-foreground/50",
-      h4: "scroll-m-20 text-sm font-sans text-foreground/75",
-      p: "scroll-m-20 text-sm font-sans text-foreground/50",
-      blockquote: "border-l-2 border-border pl-6 italic text-muted-foreground",
-      code: "relative rounded-md bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-foreground",
+      h1: "scroll-m-20 text-sm font-mono tracking-wider lowercase text-foreground leading-[150%]",
+      h2: "scroll-m-20 text-sm font-mono tracking-wider text-foreground/75 leading-[150%]",
+      h3: "scroll-m-20 text-xs font-mono tracking-wider text-foreground/50 leading-[150%]",
+      h4: "scroll-m-20 text-sm font-sans text-foreground/75 leading-[150%]",
+      p: "scroll-m-20 text-sm font-sans text-foreground/50 leading-[150%]",
+      blockquote:
+        "border-l-2 border-border pl-6 italic text-muted-foreground leading-[150%]",
+      code: "relative rounded-md bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-foreground leading-[150%]",
     },
   },
   defaultVariants: {

@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Typography } from "@/components/ui/typography";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, FileText, Mail } from "lucide-react";
+import { Facebook, Github, Linkedin } from "@/components/ui/icons";
 
 const TECH_STACK = [
   {
@@ -56,6 +57,34 @@ const PROJECTS = [
     title: "Discord Voice Chat Analytics Bot",
     role: "Backend Engineer",
     period: "Sep 2026 - Present",
+  },
+];
+
+const CONNECT_LINKS = [
+  {
+    name: "GitHub",
+    href: "https://github.com/martinmnlx",
+    icon: Github,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/martin-d-manalo/",
+    icon: Linkedin,
+  },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/martinmnlx",
+    icon: Facebook,
+  },
+  {
+    name: "Email",
+    href: "mailto:martinmanalo5@gmail.com",
+    icon: Mail,
+  },
+  {
+    name: "Resume",
+    href: "/RESUME.pdf",
+    icon: FileText,
   },
 ];
 
@@ -122,6 +151,32 @@ export default function Home() {
                 ))}
               </div>
             </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-5">
+        <Typography variant={"h1"}>connect</Typography>
+        <Typography variant={"p"}>
+          I&apos;m open to work whether it be internships or short-term
+          projects. If you need something built that would make your life
+          easier, feel free to reach out!
+        </Typography>
+        <div className="flex flex-row items-center gap-4 flex-wrap">
+          {CONNECT_LINKS.map(({ name, href, icon: Icon }) => (
+            <a
+              key={name}
+              href={href}
+              aria-label={name}
+              title={name}
+              target={href.startsWith("mailto:") ? undefined : "_blank"}
+              rel={
+                href.startsWith("mailto:") ? undefined : "noopener noreferrer"
+              }
+              className="text-foreground/75 hover:text-foreground transition-colors"
+            >
+              <Icon className="size-4" />
+            </a>
           ))}
         </div>
       </div>
