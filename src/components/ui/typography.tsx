@@ -4,14 +4,14 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-const typographyVariants = cva("text-foreground", {
+const typographyVariants = cva("", {
   variants: {
     variant: {
-      h1: "scroll-m-20 text-sm font-mono tracking-wider lowercase text-black dark:text-white",
-      h2: "scroll-m-20 text-xs font-mono tracking-wider text-black/75 dark:text-white/75",
-      h3: "scroll-m-20 text-xs font-mono tracking-wider text-black/50 dark:text-white/50",
-      h4: "scroll-m-20 text-sm font-sans text-black/75 dark:text-white/75",
-      p: "scroll-m-20 text-sm font-sans text-black/50 dark:text-white/50",
+      h1: "scroll-m-20 text-sm font-mono tracking-wider lowercase text-foreground",
+      h2: "scroll-m-20 text-sm font-mono tracking-wider text-foreground/75",
+      h3: "scroll-m-20 text-xs font-mono tracking-wider text-foreground/50",
+      h4: "scroll-m-20 text-sm font-sans text-foreground/75",
+      p: "scroll-m-20 text-sm font-sans text-foreground/50",
       blockquote: "border-l-2 border-border pl-6 italic text-muted-foreground",
       code: "relative rounded-md bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-foreground",
     },
