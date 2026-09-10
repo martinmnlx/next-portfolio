@@ -92,4 +92,3 @@ export function PixelCurtain({
     </div>
   );
 }
-
