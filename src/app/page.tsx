@@ -1,9 +1,11 @@
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Typography } from "@/components/ui/typography";
 import { ArrowUpRight, FileText } from "lucide-react";
 import { Facebook, Github, Linkedin } from "@/components/ui/icons";
 // import { ProjectCarousel } from "@/components/ui/project-carousel";
 import { CopyButton } from "@/components/ui/copy-button";
+import { PROJECTS } from "@/data/projects";
 
 const TECH_STACK = [
   {
@@ -36,53 +38,6 @@ const TECH_STACK = [
   {
     category: "tools",
     items: ["Git", "GitHub", "Figma", "VS Code", "IntelliJ IDEA", "Vercel"],
-  },
-];
-
-const PROJECTS = [
-  {
-    title: "Statement-of-Account (SOA) Manager",
-    type: "Freelance",
-    role: "Full-Stack Engineer",
-    period: "May 2026 - Present",
-    images: [
-      { title: "Account Dashboard" },
-      { title: "Statement Generation" },
-      { title: "Payment Ledger" },
-    ],
-  },
-  {
-    title: "Talentados: Applicant-Tracking System (ATS)",
-    type: "School",
-    role: "Backend Engineer",
-    period: "May 2026 - Aug 2026",
-    images: [
-      { title: "Applicant Pipeline" },
-      { title: "Resume Parser" },
-      { title: "Evaluation Matrix" },
-    ],
-  },
-  {
-    title: "Taftics: Establishment Review App",
-    type: "School",
-    role: "Full-Stack Engineer",
-    period: "Jan 2026 - Apr 2026",
-    images: [
-      { title: "Establishment Directory" },
-      { title: "Review Feed" },
-      { title: "Interactive Taft Map" },
-    ],
-  },
-  {
-    title: "Discord Voice Chat Analytics Bot",
-    type: "Personal",
-    role: "Backend Engineer",
-    period: "Sep 2026 - Present",
-    images: [
-      { title: "Voice Session Heatmap" },
-      { title: "Member Leaderboards" },
-      { title: "Analytics Overview" },
-    ],
   },
 ];
 
@@ -131,9 +86,10 @@ export default function Home() {
       <div className="flex flex-col gap-5">
         <Typography variant={"h1"}>projects</Typography>
         <div className="flex flex-col gap-5">
-          {PROJECTS.map(({ title, type, role, period }) => (
-            <div
-              key={title}
+          {PROJECTS.map(({ slug, title, type, role, period }) => (
+            <Link
+              key={slug}
+              href={`/projects/${slug}`}
               className="group flex flex-col gap-1 cursor-pointer"
             >
               {/* <ProjectCarousel images={images} projectTitle={title} /> */}
@@ -154,7 +110,7 @@ export default function Home() {
                 </Typography>
                 <Typography variant={"h3"}>{period}</Typography>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
