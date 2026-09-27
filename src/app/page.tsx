@@ -201,9 +201,9 @@ export default function Home() {
         <Typography variant={"h1"}>connect</Typography>
         <Typography variant={"p"}>
           I&apos;m open to work whether it be internships or short-term
-          projects. If you need something built that would make your life
-          easier, feel free to reach out! The best way to reach me is through my
-          email,{" "}
+          projects. If you need something built to improve business or optimize
+          workflows, feel free to reach out! The best way to reach me is through
+          my email,{" "}
           <CopyButton text="martinmanalo5@gmail.com">
             martinmanalo5@gmail.com
           </CopyButton>
