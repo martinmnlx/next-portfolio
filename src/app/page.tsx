@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Typography } from "@/components/ui/typography";
@@ -24,12 +25,12 @@ const TECH_STACK = [
     ],
   },
   {
-    category: "ui libraries",
+    category: "libraries",
     items: ["shadcn/ui", "Radix UI", "Motion"],
   },
   {
     category: "backend",
-    items: ["Node.js", "Express", "Prisma ORM", "NextAuth.js"],
+    items: ["Node.js", "Express.js", "Prisma ORM", "NextAuth.js"],
   },
   {
     category: "database",
@@ -38,6 +39,29 @@ const TECH_STACK = [
   {
     category: "tools",
     items: ["Git", "GitHub", "Figma", "VS Code", "IntelliJ IDEA", "Vercel"],
+  },
+];
+
+const EDUCATION = [
+  {
+    label: "school",
+    value: "De La Salle University",
+  },
+  {
+    label: "location",
+    value: "Manila, Philippines",
+  },
+  {
+    label: "program",
+    value: "BS Computer Science, Major in Software Technology",
+  },
+  {
+    label: "years",
+    value: "Sep 2024 - Aug 2028*",
+  },
+  {
+    label: "gpa",
+    value: "3.64 / 4.00",
   },
 ];
 
@@ -67,23 +91,41 @@ const CONNECT_LINKS = [
 export default function Home() {
   return (
     <main className="flex flex-col w-160 px-5 gap-10">
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-row items-center gap-4">
+        <Image
+          src="/me+ironman.jpg"
+          alt="Martin Manalo"
+          width={64}
+          height={64}
+          priority
+          className="size-16 rounded-lg object-cover border border-border"
+        />
+        <Image
+          src="/signature.png"
+          alt="Martin Manalo signature"
+          width={112}
+          height={64}
+          className="h-10 w-auto object-contain dark:invert select-none pointer-events-none opacity-80"
+        />
+      </div>
+      <section id="about" className="flex flex-col gap-5 scroll-mt-20">
         <Typography variant={"h1"}>Hello!</Typography>
         <Typography variant={"p"}>
-          I&apos;m <span className="text-foreground/75">Martin</span>,
-          third-year computer science student at De La Salle University
-          (3.64/4.00 GPA), based in the{" "}
-          <span className="text-foreground/75">Philippines</span>, aiming to
-          become a software/design engineer in the industry.
+          I'm <span className="text-foreground/75">Martin</span>, a third-year
+          computer science student at{" "}
+          <span className="text-foreground/75">De La Salle University</span>,
+          based in Manila, aiming to become a software/design engineer. I'm
+          particularly interested in UX research — studying the way people
+          interact with apps and engineering creative UI solutions.
         </Typography>
         <Typography variant={"p"}>
-          Ever since I fell into this rabbit hole, I have obsessed over the
+          Ever since I fell into this rabbit hole, I have been obsessed over the
           little details that make user experiences feel like they were crafted
           with care and intent.
         </Typography>
-      </div>
+      </section>
 
-      <div className="flex flex-col gap-5">
+      <section id="projects" className="flex flex-col gap-5 scroll-mt-20">
         <Typography variant={"h1"}>projects</Typography>
         <div className="flex flex-col gap-5">
           {PROJECTS.map(({ slug, title, type, role, period }) => (
@@ -113,20 +155,20 @@ export default function Home() {
             </Link>
           ))}
         </div>
-      </div>
+      </section>
 
-      <div className="flex flex-col gap-5">
-        <Typography variant={"h1"}>Tech Stack</Typography>
-        <div className="flex flex-col gap-4">
+      <section id="stack" className="flex flex-col gap-5 scroll-mt-20">
+        <Typography variant={"h1"}>stack</Typography>
+        <div className="flex flex-col gap-3">
           {TECH_STACK.map(({ category, items }) => (
-            <div
-              key={category}
-              className="flex flex-row items-center w-full justify-between gap-4"
-            >
-              <Typography variant={"h2"} className="whitespace-nowrap">
+            <div key={category} className="flex flex-row items-center">
+              <Typography
+                variant={"h2"}
+                className="w-50 shrink-0 select-none whitespace-nowrap"
+              >
                 {category}
               </Typography>
-              <div className="flex flex-row items-center gap-2 flex-wrap justify-end">
+              <div className="flex flex-row items-center gap-2 flex-wrap">
                 {items.map((item) => (
                   <Badge key={item}>{item}</Badge>
                 ))}
@@ -134,9 +176,28 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </div>
+      </section>
 
-      <div className="flex flex-col gap-5">
+      <section id="education" className="flex flex-col gap-5 scroll-mt-20">
+        <Typography variant={"h1"}>education</Typography>
+        <div className="flex flex-col gap-3">
+          {EDUCATION.map(({ label, value }) => (
+            <div key={label} className="flex flex-row items-baseline">
+              <Typography
+                variant={"h2"}
+                className="w-50 shrink-0 select-none whitespace-nowrap"
+              >
+                {label}
+              </Typography>
+              <Typography variant={"p"} as="span">
+                {value}
+              </Typography>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="connect" className="flex flex-col gap-5 scroll-mt-20">
         <Typography variant={"h1"}>connect</Typography>
         <Typography variant={"p"}>
           I&apos;m open to work whether it be internships or short-term
@@ -165,7 +226,7 @@ export default function Home() {
             </a>
           ))}
         </div>
-      </div>
+      </section>
     </main>
   );
 }
