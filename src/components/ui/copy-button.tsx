@@ -33,7 +33,7 @@ export function CopyButton({ text, children, className }: CopyButtonProps) {
       }
       title={copied ? "Copied!" : "Click to copy email"}
       className={cn(
-        "inline-flex items-center gap-1.5 whitespace-nowrap text-foreground/75 hover:text-foreground transition-colors cursor-pointer",
+        "inline-flex items-center gap-1.5 whitespace-nowrap text-foreground/75 hover:text-foreground transition-all duration-300 cursor-pointer",
         className,
       )}
     >

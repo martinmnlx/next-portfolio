@@ -79,7 +79,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "talentados",
-    title: "Talentados: Applicant-Tracking System (ATS)",
+    title: "Talentados: Applicant-Tracking System",
     role: "Backend Engineer",
     type: "School",
     period: "May 2026 - Aug 2026",
@@ -170,7 +170,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "callbot",
-    title: "Discord Voice Chat Analytics Bot",
+    title: "CallBot: Discord Call Analytics Bot",
     role: "Backend Engineer",
     type: "Personal",
     period: "Sep 2026 - Present",

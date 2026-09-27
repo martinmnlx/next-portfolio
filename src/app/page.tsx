@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Typography } from "@/components/ui/typography";
-import { ArrowUpRight, FileText } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import { Facebook, Github, Linkedin } from "@/components/ui/icons";
 // import { ProjectCarousel } from "@/components/ui/project-carousel";
 import { CopyButton } from "@/components/ui/copy-button";
@@ -15,22 +15,15 @@ const TECH_STACK = [
   },
   {
     category: "frontend",
-    items: [
-      "React",
-      "Next.js",
-      "Tailwind CSS",
-      "Bootstrap",
-      "Vite",
-      "HTML/CSS",
-    ],
+    items: ["React", "Next.js", "Tailwind CSS", "Bootstrap", "HTML/CSS"],
   },
   {
     category: "libraries",
-    items: ["shadcn/ui", "Radix UI", "Motion"],
+    items: ["shadcn/ui", "Radix UI", "Zustand", "Motion"],
   },
   {
     category: "backend",
-    items: ["Node.js", "Express.js", "Prisma ORM", "NextAuth.js"],
+    items: ["Node.js", "REST APIs", "Express.js", "Prisma ORM"],
   },
   {
     category: "database",
@@ -38,7 +31,7 @@ const TECH_STACK = [
   },
   {
     category: "tools",
-    items: ["Git", "GitHub", "Figma", "VS Code", "IntelliJ IDEA", "Vercel"],
+    items: ["Git", "GitHub", "VS Code", "Figma", "Vercel", "Vite"],
   },
 ];
 
@@ -56,7 +49,7 @@ const EDUCATION = [
     value: "BS Computer Science, Major in Software Technology",
   },
   {
-    label: "years",
+    label: "duration",
     value: "Sep 2024 - Aug 2028*",
   },
   {
@@ -67,24 +60,19 @@ const EDUCATION = [
 
 const CONNECT_LINKS = [
   {
-    name: "GitHub",
-    href: "https://github.com/martinmnlx",
-    icon: Github,
-  },
-  {
-    name: "LinkedIn",
+    name: "linkedin",
     href: "https://www.linkedin.com/in/martin-d-manalo/",
     icon: Linkedin,
   },
   {
-    name: "Facebook",
-    href: "https://www.facebook.com/martinmnlx",
-    icon: Facebook,
+    name: "github",
+    href: "https://github.com/martinmnlx",
+    icon: Github,
   },
   {
-    name: "Resume",
-    href: "/RESUME.pdf",
-    icon: FileText,
+    name: "facebook",
+    href: "https://www.facebook.com/martinmnlx",
+    icon: Facebook,
   },
 ];
 
@@ -111,10 +99,10 @@ export default function Home() {
       <section id="about" className="flex flex-col gap-5 scroll-mt-20">
         <Typography variant={"h1"}>Hello!</Typography>
         <Typography variant={"p"}>
-          I'm <span className="text-foreground/75">Martin</span>, a third-year
-          computer science student at{" "}
+          I&apos;m <span className="text-foreground/75">Martin</span>, a
+          third-year computer science student at{" "}
           <span className="text-foreground/75">De La Salle University</span>,
-          based in Manila, aiming to become a software/design engineer. I'm
+          based in Manila, aiming to become a software/design engineer. I&apos;m
           particularly interested in UX research — studying the way people
           interact with apps and engineering creative UI solutions.
         </Typography>
@@ -209,20 +197,30 @@ export default function Home() {
           </CopyButton>
           , or any of my social links below.
         </Typography>
-        <div className="flex flex-row items-center gap-4 flex-wrap">
+        <Typography>
+          You may download and view my{" "}
+          <a
+            href="/RESUME - MANALO, CARL MARTIN.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 whitespace-nowrap text-foreground/75 hover:text-foreground transition-all duration-300 cursor-pointer"
+          >
+            professional resume
+            <Download className="size-3.5" />
+          </a>
+          .
+        </Typography>
+        <div className="flex flex-row gap-10 items-start">
           {CONNECT_LINKS.map(({ name, href, icon: Icon }) => (
             <a
               key={name}
               href={href}
-              aria-label={name}
-              title={name}
-              target={href.startsWith("mailto:") ? undefined : "_blank"}
-              rel={
-                href.startsWith("mailto:") ? undefined : "noopener noreferrer"
-              }
-              className="text-foreground/75 hover:text-foreground transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-sans text-foreground/75 hover:text-foreground hover:underline hover:underline-offset-4 transition-all duration-300 cursor-pointer"
             >
               <Icon className="size-4" />
+              <span>{name}</span>
             </a>
           ))}
         </div>
