@@ -19,6 +19,7 @@ export interface Project {
   role: string;
   type: string;
   period: string;
+  year?: number;
   overview: string[];
   stack: string[];
   contributions: string[];
@@ -31,9 +32,10 @@ export const PROJECTS: Project[] = [
   {
     slug: "soa-manager",
     title: "Statement-of-Account (SOA) Manager",
-    role: "Full-Stack Engineer",
-    type: "Freelance",
+    role: "full stack engineer",
+    type: "work",
     period: "Apr 2026 - Present",
+    year: 2026,
     overview: [
       "My mother and her fellow staff members spent hours every week manually drafting billing statements, wrestling long spreadsheets, and tracking unpaid and overdue payments and client receipts. That workflow, by their words, was incredibly time-consuming and prone to small but costly errors.",
       "To solve this, I built a full-stack cloud-based application with a Google Docs-style editor and a centralized ledger to track and manage the relational statements, clients, and payments data. The app has been integrated to their weekly workflow for more than 4+ months now, saving them approximately 4+ hours per week.",
@@ -79,10 +81,11 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "talentados",
-    title: "Talentados: Applicant-Tracking System",
-    role: "Backend Engineer",
-    type: "School",
+    title: "Talentados: Applicant Tracking System",
+    role: "backend engineer",
+    type: "school",
     period: "May 2026 - Aug 2026",
+    year: 2026,
     overview: [
       "Talentados is an automated applicant-tracking and candidate pipeline system tailored for modern recruitment workflows. It simplifies job candidate intake, resume processing, and multi-stage evaluation.",
       "Built as a robust backend solution handling high-volume candidate status transitions, automated notifications, and interview scheduling workflows with reliable relational storage.",
@@ -124,9 +127,10 @@ export const PROJECTS: Project[] = [
   {
     slug: "taftics",
     title: "Taftics: Establishment Review App",
-    role: "Full-Stack Engineer",
-    type: "School",
+    role: "full stack engineer",
+    type: "school",
     period: "Jan 2026 - Apr 2026",
+    year: 2026,
     overview: [
       "Taftics is a crowd-sourced establishment discovery and review web application built for the De La Salle University student community along Taft Avenue.",
       "Allows students to discover dining spots, study spaces, and local services with student-verified ratings, reviews, menu details, and budget estimates.",
@@ -170,10 +174,11 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "callbot",
-    title: "CallBot: Discord Call Analytics Bot",
-    role: "Backend Engineer",
-    type: "Personal",
+    title: "CallBot: Discord Voice Call Analytics Bot",
+    role: "backend engineer",
+    type: "personal",
     period: "Sep 2026 - Present",
+    year: 2026,
     overview: [
       "An automated Discord bot that passively tracks, aggregates, and visualizes voice channel activity, user engagement trends, and duration statistics within gaming and study communities.",
       "Provides real-time activity heatmaps, weekly voice leaderboards, and server health analytics through automated Discord embed reporting.",
@@ -201,6 +206,115 @@ export const PROJECTS: Project[] = [
       { title: "Voice Session Heatmap" },
       { title: "Member Leaderboards" },
       { title: "Analytics Overview" },
+    ],
+  },
+  {
+    slug: "eventbuddy",
+    title: "EventBuddy: Hall Reservation System",
+    role: "frontend engineer",
+    type: "school",
+    period: "Oct 2025 - Dec 2025",
+    year: 2025,
+    overview: [
+      "EventBuddy is an online hall and multipurpose venue reservation management platform designed to streamline room scheduling, prevent double-bookings, and coordinate event logistics across university organizations.",
+      "Features interactive venue availability calendars, automated reservation request reviews, and administrative approval pipelines.",
+    ],
+    stack: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+    ],
+    contributions: [
+      "Built responsive interactive calendar and venue slot booking interfaces with dynamic conflict-checking.",
+      "Designed administrative dashboard for managing venue bookings, equipment checklists, and approval queues.",
+      "Engineered client-side form validation and multi-step venue reservation request flows.",
+    ],
+    showcase: [
+      {
+        title: "Venue Reservation & Scheduling",
+        description:
+          "Interactive hall availability calendar and multi-step booking request submission workflow.",
+        media: {
+          type: "image",
+        },
+      },
+    ],
+    links: [{ label: "GitHub Repo", href: "https://github.com/martinmnlx" }],
+    images: [
+      { title: "Booking Calendar" },
+      { title: "Reservation Form" },
+      { title: "Admin Review Board" },
+    ],
+  },
+  {
+    slug: "digital-loveprint",
+    title: "Digital Loveprint: For My Girlfriend",
+    role: "frontend engineer",
+    type: "personal",
+    period: "Aug 2025",
+    year: 2025,
+    overview: [
+      "A creative and interactive digital keepsake crafted as a personal anniversary experience, featuring custom animations, a timeline of relationship milestones, and interactive photo galleries.",
+      "Engineered with delicate UI micro-interactions, smooth page transitions, and responsive mobile-first layouts.",
+    ],
+    stack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Motion"],
+    contributions: [
+      "Designed and animated interactive milestone timeline cards with Motion gesture controls.",
+      "Crafted custom photo album galleries with responsive aspect ratios and lightboxes.",
+      "Integrated audio playback and personalized ambient interactive easter eggs.",
+    ],
+    showcase: [
+      {
+        title: "Interactive Keepsake Experience",
+        description:
+          "Milestone timeline, interactive photo galleries, and animated celebration moments.",
+        media: {
+          type: "image",
+        },
+      },
+    ],
+    links: [{ label: "GitHub Repo", href: "https://github.com/martinmnlx" }],
+    images: [
+      { title: "Milestone Timeline" },
+      { title: "Memory Gallery" },
+      { title: "Interactive Letter" },
+    ],
+  },
+  {
+    slug: "sword-of-vengeance",
+    title: "Sword of Vengeance: Turn-Based Fighting Game",
+    role: "java engineer",
+    type: "school",
+    period: "Jan 2025 - Apr 2025",
+    year: 2025,
+    overview: [
+      "Sword of Vengeance is an object-oriented turn-based 2D fighting game developed in Java, featuring strategic combat, distinct character classes, and customizable ability skill-trees.",
+      "Architected adhering to strict OOP principles, custom game loop states, and dynamic turn-sequencing mechanics.",
+    ],
+    stack: ["Java", "JavaFX", "OOP", "Design Patterns"],
+    contributions: [
+      "Implemented character class inheritance hierarchies, polymorphic ability trees, and combat state calculations.",
+      "Programmed turn-based combat battle loop with initiative queues and damage calculation algorithms.",
+      "Designed dynamic 2D UI status bars, combat log readouts, and character animation sprites with JavaFX.",
+    ],
+    showcase: [
+      {
+        title: "Turn-Based Combat Arena",
+        description:
+          "Class-based tactical combat system with initiative turn order and ability execution.",
+        media: {
+          type: "image",
+        },
+      },
+    ],
+    links: [{ label: "GitHub Repo", href: "https://github.com/martinmnlx" }],
+    images: [
+      { title: "Battle Arena" },
+      { title: "Character Select" },
+      { title: "Skill Tree" },
     ],
   },
 ];

@@ -116,32 +116,45 @@ export default function Home() {
       <section id="projects" className="flex flex-col gap-5 scroll-mt-20">
         <Typography variant={"h1"}>projects</Typography>
         <div className="flex flex-col gap-5">
-          {PROJECTS.map(({ slug, title, type, role, period }) => (
-            <Link
-              key={slug}
-              href={`/projects/${slug}`}
-              className="group flex flex-col gap-1 cursor-pointer"
-            >
-              {/* <ProjectCarousel images={images} projectTitle={title} /> */}
-              <div className="flex flex-row items-center">
-                <span className="inline-flex items-center justify-center overflow-hidden w-0 opacity-0 -translate-x-1.5 transition-all duration-200 ease-out group-hover:w-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:mr-1">
-                  <ArrowUpRight className="size-3.5 text-foreground shrink-0" />
-                </span>
-                <Typography
-                  variant={"h4"}
-                  className="transition-transform duration-200 text-foreground/75 group-hover:text-foreground"
-                >
-                  {title}
-                </Typography>
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <Typography variant={"h3"}>
-                  {type}, {role}
-                </Typography>
-                <Typography variant={"h3"}>{period}</Typography>
-              </div>
-            </Link>
-          ))}
+          {PROJECTS.map(({ slug, title, type, role, year }, index) => {
+            const showYear =
+              year && (index === 0 || PROJECTS[index - 1].year !== year);
+
+            return (
+              <Link
+                key={slug}
+                href={`/projects/${slug}`}
+                className="group flex flex-col gap-2 cursor-pointer"
+              >
+                {/* <ProjectCarousel images={images} projectTitle={title} /> */}
+                <div className="flex flex-row items-center justify-between">
+                  <div className="flex flex-row items-center">
+                    <Typography
+                      variant={"h4"}
+                      className="transition-colors duration-200 text-foreground/75 group-hover:text-foreground"
+                    >
+                      {title}
+                    </Typography>
+                    <span className="inline-flex items-center justify-center overflow-hidden w-0 opacity-0 -translate-x-1.5 transition-all duration-200 ease-out group-hover:w-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:ml-1">
+                      <ArrowUpRight className="size-3.5 text-foreground shrink-0" />
+                    </span>
+                  </div>
+                  {showYear && (
+                    <Typography
+                      variant={"h3"}
+                      className="select-none font-mono"
+                    >
+                      {year}
+                    </Typography>
+                  )}
+                </div>
+                <div className="flex flex-row items-center gap-2">
+                  <Badge variant="mono">{type}</Badge>
+                  <Typography variant={"h3"}>{role}</Typography>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
