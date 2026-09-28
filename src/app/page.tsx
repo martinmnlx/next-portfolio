@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ViewTransition } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Typography } from "@/components/ui/typography";
 import { ArrowUpRight, Download } from "lucide-react";
@@ -129,12 +130,14 @@ export default function Home() {
                 {/* <ProjectCarousel images={images} projectTitle={title} /> */}
                 <div className="flex flex-row items-center justify-between">
                   <div className="flex flex-row items-center">
-                    <Typography
-                      variant={"h4"}
-                      className="transition-colors duration-200 text-foreground/75 group-hover:text-foreground"
-                    >
-                      {title}
-                    </Typography>
+                    <ViewTransition name={`project-title-${slug}`}>
+                      <Typography
+                        variant={"h4"}
+                        className="transition-colors duration-200 text-foreground/75 group-hover:text-foreground"
+                      >
+                        {title}
+                      </Typography>
+                    </ViewTransition>
                     <span className="inline-flex items-center justify-center overflow-hidden w-0 opacity-0 -translate-x-1.5 transition-all duration-200 ease-out group-hover:w-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:ml-1">
                       <ArrowUpRight className="size-3.5 text-foreground shrink-0" />
                     </span>
@@ -149,8 +152,12 @@ export default function Home() {
                   )}
                 </div>
                 <div className="flex flex-row items-center gap-2">
-                  <Badge variant="mono">{type}</Badge>
-                  <Typography variant={"h3"}>{role}</Typography>
+                  <ViewTransition name={`project-badge-${slug}`}>
+                    <Badge variant="mono">{type}</Badge>
+                  </ViewTransition>
+                  <ViewTransition name={`project-role-${slug}`}>
+                    <Typography variant={"h3"}>{role}</Typography>
+                  </ViewTransition>
                 </div>
               </Link>
             );
