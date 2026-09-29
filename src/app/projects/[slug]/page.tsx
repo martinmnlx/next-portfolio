@@ -84,7 +84,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       {/* Overview Section */}
       <div className="flex flex-col gap-5">
         <Typography variant="h1">overview</Typography>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-3">
           {project.overview.map((paragraph, idx) => (
             <div key={idx} className="flex flex-row items-start">
               <Typography
@@ -114,7 +114,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       {/* Contributions Section */}
       <div className="flex flex-col gap-5">
         <Typography variant="h1">contributions</Typography>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-3">
           {project.contributions.map((item, idx) => (
             <div key={idx} className="flex flex-row items-start">
               <Typography variant="h2" className="w-10 shrink-0 select-none">
