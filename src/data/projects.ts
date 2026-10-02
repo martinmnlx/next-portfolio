@@ -1,11 +1,18 @@
 export interface ProjectSpotlight {
-  title?: string;
+  title: string;
   description: string;
   media?: {
     type?: "image" | "video";
     src?: string;
     alt?: string;
   };
+}
+
+export interface ProjectVideo {
+  src: string;
+  title?: string;
+  description?: string;
+  poster?: string;
 }
 
 export interface ProjectLink {
@@ -23,9 +30,9 @@ export interface Project {
   overview: string[];
   stack: string[];
   contributions: string[];
-  showcase: ProjectSpotlight[];
+  showcase?: ProjectSpotlight[];
+  video?: ProjectVideo | string;
   links: ProjectLink[];
-  images?: { title: string; src?: string }[];
 }
 
 export const PROJECTS: Project[] = [
@@ -58,9 +65,25 @@ export const PROJECTS: Project[] = [
     ],
     showcase: [
       {
-        title: "Statement Editor & Ledger Workflow",
+        title: "Live Statement Editor",
         description:
-          "Designed and engineered a responsive billing management web application to centralize and replace an error-prone, Excel-based Statement of Account (SOA) creation and management workflow.",
+          "Google Docs-style live billing statement editor featuring cloud auto-save, draft recovery, undo/redo, and automated PDF export merging attachments.",
+        media: {
+          type: "image",
+        },
+      },
+      {
+        title: "Interactive Ledger & Data Drawers",
+        description:
+          "Centralized data tables for statements, clients, and payments with search queries, column filters, and slide-out drawers for instant record management.",
+        media: {
+          type: "image",
+        },
+      },
+      {
+        title: "Multi-Statement Payment Logging",
+        description:
+          "Batch payment allocation across multiple invoices with real-time recalculation of outstanding balances and dual-currency support.",
         media: {
           type: "image",
         },
@@ -72,11 +95,6 @@ export const PROJECTS: Project[] = [
         label: "GitHub Repo",
         href: "https://github.com/martinmnlx/soa-manager",
       },
-    ],
-    images: [
-      { title: "Account Dashboard" },
-      { title: "Statement Generation" },
-      { title: "Payment Ledger" },
     ],
   },
   {
@@ -113,15 +131,26 @@ export const PROJECTS: Project[] = [
           type: "image",
         },
       },
+      {
+        title: "Resume Parser & Candidate Intake",
+        description:
+          "Automated ingestion and parsing of applicant documents to populate structured candidate profiles and qualification metrics.",
+        media: {
+          type: "image",
+        },
+      },
+      {
+        title: "Evaluation Matrix & Rubrics",
+        description:
+          "Multi-criteria scoring system enabling hiring teams to record feedback, ratings, and collaborative interview decisions.",
+        media: {
+          type: "image",
+        },
+      },
     ],
     links: [
       { label: "Deployed Site", href: "#" },
       { label: "GitHub Repo", href: "https://github.com/martinmnlx" },
-    ],
-    images: [
-      { title: "Applicant Pipeline" },
-      { title: "Resume Parser" },
-      { title: "Evaluation Matrix" },
     ],
   },
   {
@@ -151,9 +180,25 @@ export const PROJECTS: Project[] = [
     ],
     showcase: [
       {
-        title: "Establishment Discovery & Reviews",
+        title: "Establishment Discovery & Directory",
         description:
-          "Browse, search, and review local student spots with verified ratings and detailed feedback.",
+          "Curated directory of student spots with verified ratings, student-friendly price indicators, and category filtering.",
+        media: {
+          type: "image",
+        },
+      },
+      {
+        title: "Community Review Feed",
+        description:
+          "Crowd-sourced establishment reviews with photo uploads, helpfulness upvotes, and community recommendation badges.",
+        media: {
+          type: "image",
+        },
+      },
+      {
+        title: "Interactive Taft Map",
+        description:
+          "Map-based venue exploration along Taft Avenue highlighting walking distances and neighborhood favorites.",
         media: {
           type: "image",
         },
@@ -165,11 +210,6 @@ export const PROJECTS: Project[] = [
         label: "GitHub Repo",
         href: "https://github.com/Gabiesaur/CCAPDEV-MCO",
       },
-    ],
-    images: [
-      { title: "Establishment Directory" },
-      { title: "Review Feed" },
-      { title: "Interactive Taft Map" },
     ],
   },
   {
@@ -198,14 +238,25 @@ export const PROJECTS: Project[] = [
           type: "image",
         },
       },
+      {
+        title: "Voice Session Heatmap",
+        description:
+          "Visual distribution of active hours and peak engagement periods across community Discord voice rooms.",
+        media: {
+          type: "image",
+        },
+      },
+      {
+        title: "Server Health & Analytics Overview",
+        description:
+          "Aggregated weekly digests and session telemetry delivered directly to administrative Discord channels.",
+        media: {
+          type: "image",
+        },
+      },
     ],
     links: [
       { label: "GitHub Repo", href: "https://github.com/martinmnlx/callbot" },
-    ],
-    images: [
-      { title: "Voice Session Heatmap" },
-      { title: "Member Leaderboards" },
-      { title: "Analytics Overview" },
     ],
   },
   {
@@ -232,22 +283,13 @@ export const PROJECTS: Project[] = [
       "Designed administrative dashboard for managing venue bookings, equipment checklists, and approval queues.",
       "Engineered client-side form validation and multi-step venue reservation request flows.",
     ],
-    showcase: [
-      {
-        title: "Venue Reservation & Scheduling",
-        description:
-          "Interactive hall availability calendar and multi-step booking request submission workflow.",
-        media: {
-          type: "image",
-        },
-      },
-    ],
+    video: {
+      src: "/projects/eventbuddy/eventbuddy.mp4",
+      title: "Interactive Hall Reservation Demo",
+      description:
+        "Full demonstration of interactive venue availability calendars, multi-step booking request flows, and administrative approvals.",
+    },
     links: [{ label: "GitHub Repo", href: "https://github.com/martinmnlx" }],
-    images: [
-      { title: "Booking Calendar" },
-      { title: "Reservation Form" },
-      { title: "Admin Review Board" },
-    ],
   },
   {
     slug: "digital-loveprint",
@@ -268,20 +310,31 @@ export const PROJECTS: Project[] = [
     ],
     showcase: [
       {
-        title: "Interactive Keepsake Experience",
+        title: "Milestone Timeline",
         description:
-          "Milestone timeline, interactive photo galleries, and animated celebration moments.",
+          "Interactive chronological relationship milestones with Motion gesture animations and smooth spring transitions.",
+        media: {
+          type: "image",
+        },
+      },
+      {
+        title: "Curated Memory Gallery",
+        description:
+          "Responsive photo galleries with lightbox views, image zoom, and subtle ambient styling.",
+        media: {
+          type: "image",
+        },
+      },
+      {
+        title: "Interactive Anniversary Letter",
+        description:
+          "Animated personalized note with hidden easter eggs and ambient audio accompaniment.",
         media: {
           type: "image",
         },
       },
     ],
     links: [{ label: "GitHub Repo", href: "https://github.com/martinmnlx" }],
-    images: [
-      { title: "Milestone Timeline" },
-      { title: "Memory Gallery" },
-      { title: "Interactive Letter" },
-    ],
   },
   {
     slug: "sword-of-vengeance",
@@ -300,22 +353,13 @@ export const PROJECTS: Project[] = [
       "Programmed turn-based combat battle loop with initiative queues and damage calculation algorithms.",
       "Designed dynamic 2D UI status bars, combat log readouts, and character animation sprites with JavaFX.",
     ],
-    showcase: [
-      {
-        title: "Turn-Based Combat Arena",
-        description:
-          "Class-based tactical combat system with initiative turn order and ability execution.",
-        media: {
-          type: "image",
-        },
-      },
-    ],
+    video: {
+      src: "/projects/sword-of-vengeance/crown-of-vengeance.mp4",
+      title: "Combat Arena & Gameplay Demo",
+      description:
+        "Gameplay walkthrough of the JavaFX turn-based combat system, character class abilities, damage calculations, and skill tree progression.",
+    },
     links: [{ label: "GitHub Repo", href: "https://github.com/martinmnlx" }],
-    images: [
-      { title: "Battle Arena" },
-      { title: "Character Select" },
-      { title: "Skill Tree" },
-    ],
   },
 ];
 

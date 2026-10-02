@@ -5,7 +5,6 @@ import { Badge } from "@/components/ui/badge";
 import { Typography } from "@/components/ui/typography";
 import { ArrowUpRight, Download } from "lucide-react";
 import { Facebook, Github, Linkedin } from "@/components/ui/icons";
-// import { ProjectCarousel } from "@/components/ui/project-carousel";
 import { CopyButton } from "@/components/ui/copy-button";
 import { PROJECTS } from "@/data/projects";
 
@@ -127,7 +126,6 @@ export default function Home() {
                 href={`/projects/${slug}`}
                 className="group flex flex-col gap-2 cursor-pointer"
               >
-                {/* <ProjectCarousel images={images} projectTitle={title} /> */}
                 <div className="flex flex-row items-center justify-between">
                   <div className="flex flex-row items-center">
                     <ViewTransition name={`project-title-${slug}`}>
