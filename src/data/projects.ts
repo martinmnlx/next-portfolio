@@ -65,27 +65,63 @@ export const PROJECTS: Project[] = [
     ],
     showcase: [
       {
-        title: "Live Statement Editor",
+        title: "Live Statement Editor (A4 Layout)",
         description:
-          "Google Docs-style live billing statement editor featuring cloud auto-save, draft recovery, undo/redo, and automated PDF export merging attachments.",
+          "Google Docs-style live billing statement editor with incremental auto-naming, cloud auto-save, undo/redo, draft recovery, and automated PDF export.",
         media: {
           type: "image",
+          src: "/projects/soa-manager/03-editor-document-a4.png",
+          alt: "Live statement editor with A4 document layout",
         },
       },
       {
-        title: "Interactive Ledger & Data Drawers",
+        title: "Statements Master Table & Ledger",
         description:
-          "Centralized data tables for statements, clients, and payments with search queries, column filters, and slide-out drawers for instant record management.",
+          "Centralized data table with search queries, multi-column filters, payment status indicators, and dual-currency summary balances in PHP and USD.",
         media: {
           type: "image",
+          src: "/projects/soa-manager/04-statements-master-table.png",
+          alt: "Statements master ledger table",
         },
       },
       {
-        title: "Multi-Statement Payment Logging",
+        title: "Clients Directory & Profile Management",
         description:
-          "Batch payment allocation across multiple invoices with real-time recalculation of outstanding balances and dual-currency support.",
+          "Relational directory to organize client records, contact details, statement histories, and active billing statuses.",
         media: {
           type: "image",
+          src: "/projects/soa-manager/05-clients-directory.png",
+          alt: "Clients directory and management table",
+        },
+      },
+      {
+        title: "Payments Registry & Audit Trail",
+        description:
+          "Comprehensive payment log tracking client receipts, payment dates, allocation modes, and connected invoice statements.",
+        media: {
+          type: "image",
+          src: "/projects/soa-manager/06-payments-registry.png",
+          alt: "Payments registry tracking receipts",
+        },
+      },
+      {
+        title: "Multi-Statement Payment Allocation",
+        description:
+          "Modal workflow allowing staff to record a single lump-sum payment across multiple overdue invoices with automatic balance recalculation.",
+        media: {
+          type: "image",
+          src: "/projects/soa-manager/09-log-payment-modal.png",
+          alt: "Log payment modal for multi-statement allocations",
+        },
+      },
+      {
+        title: "New Statement Creation Drawer",
+        description:
+          "Slide-out creation drawer allowing staff to quickly draft new billing statements without losing their place in the master ledger.",
+        media: {
+          type: "image",
+          src: "/projects/soa-manager/10-new-statement-drawer.png",
+          alt: "Slide-out drawer for creating new statements",
         },
       },
     ],
@@ -108,15 +144,7 @@ export const PROJECTS: Project[] = [
       "Talentados is an automated applicant-tracking and candidate pipeline system tailored for modern recruitment workflows. It simplifies job candidate intake, resume processing, and multi-stage evaluation.",
       "Built as a robust backend solution handling high-volume candidate status transitions, automated notifications, and interview scheduling workflows with reliable relational storage.",
     ],
-    stack: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Node.js",
-      "Express",
-      "Prisma ORM",
-      "PostgreSQL",
-    ],
+    stack: ["Next.js", "TypeScript", "Express.js", "Supabase", "Prisma ORM"],
     contributions: [
       "Architected relational candidate-pipeline database schema and status state-machine with Prisma ORM.",
       "Engineered RESTful API endpoints for candidate application intake, document uploads, and scoring criteria.",
@@ -167,11 +195,11 @@ export const PROJECTS: Project[] = [
     stack: [
       "React",
       "JavaScript",
-      "Node.js",
-      "Express",
-      "MongoDB",
       "Bootstrap",
-      "HTML/CSS",
+      "Express.js",
+      "Node.js",
+      "MongoDB",
+      "Cloudinary",
     ],
     contributions: [
       "Designed and developed the full-stack MERN architecture with MongoDB schemas for establishments and reviews.",
@@ -270,14 +298,7 @@ export const PROJECTS: Project[] = [
       "EventBuddy is an online hall and multipurpose venue reservation management platform designed to streamline room scheduling, prevent double-bookings, and coordinate event logistics across university organizations.",
       "Features interactive venue availability calendars, automated reservation request reviews, and administrative approval pipelines.",
     ],
-    stack: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Node.js",
-      "Express",
-      "PostgreSQL",
-    ],
+    stack: ["Java", "JSwing", "Java Database Connectivity (JDBC)", "MySQL"],
     contributions: [
       "Built responsive interactive calendar and venue slot booking interfaces with dynamic conflict-checking.",
       "Designed administrative dashboard for managing venue bookings, equipment checklists, and approval queues.",
@@ -347,7 +368,12 @@ export const PROJECTS: Project[] = [
       "Sword of Vengeance is an object-oriented turn-based 2D fighting game developed in Java, featuring strategic combat, distinct character classes, and customizable ability skill-trees.",
       "Architected adhering to strict OOP principles, custom game loop states, and dynamic turn-sequencing mechanics.",
     ],
-    stack: ["Java", "JavaFX", "OOP", "Design Patterns"],
+    stack: [
+      "Java",
+      "JavaFX",
+      "Object-Oriented Programming",
+      "MVC Architecture",
+    ],
     contributions: [
       "Implemented character class inheritance hierarchies, polymorphic ability trees, and combat state calculations.",
       "Programmed turn-based combat battle loop with initiative queues and damage calculation algorithms.",
