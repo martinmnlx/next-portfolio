@@ -1,10 +1,27 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback, useSyncExternalStore } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  useCallback,
+  useSyncExternalStore,
+} from "react";
 import Image from "next/image";
 import { createPortal } from "react-dom";
-import { motion, AnimatePresence, useMotionValue, useSpring } from "motion/react";
-import { ChevronLeft, ChevronRight, X, ZoomIn, Image as ImageIcon } from "lucide-react";
+import {
+  motion,
+  AnimatePresence,
+  useMotionValue,
+  useSpring,
+} from "motion/react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  X,
+  ZoomIn,
+  Image as ImageIcon,
+} from "lucide-react";
 import { Typography } from "@/components/ui/typography";
 import type { ProjectSpotlight } from "@/data/projects";
 
@@ -74,25 +91,27 @@ function InteractiveScreenshotCard({
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="group relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-border bg-gradient-to-b from-muted/60 via-muted/30 to-muted/50 dark:from-muted/30 dark:via-muted/15 dark:to-muted/20 select-none cursor-zoom-in transition-all duration-300 hover:border-foreground/25 hover:shadow-md"
+      className="relative w-full aspect-[16/10] select-none cursor-zoom-in"
     >
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        sizes="(max-width: 768px) 100vw, 640px"
-        className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.01]"
-      />
+      <div className="relative w-full h-full rounded-[4px] overflow-hidden border border-border bg-gradient-to-b from-muted/60 via-muted/30 to-muted/50 dark:from-muted/30 dark:via-muted/15 dark:to-muted/20">
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="(max-width: 768px) 100vw, 640px"
+          className="object-cover"
+        />
+      </div>
 
       {/* Cursor-following badge */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute top-0 left-0 z-20 hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-background/90 text-foreground backdrop-blur-md border border-border/80 shadow-lg text-xs font-mono tracking-tight -translate-x-1/2 -translate-y-1/2 whitespace-nowrap"
+        className="pointer-events-none absolute top-0 left-0 z-20 hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded-[4px] bg-background/90 text-foreground backdrop-blur-md border border-border/80 shadow-md text-xs font-mono tracking-tight -translate-x-1/2 -translate-y-[calc(100%+8px)] whitespace-nowrap"
         style={{
           x: smoothX,
           y: smoothY,
           opacity: isHovered ? 1 : 0,
-          scale: isHovered ? 1 : 0.8,
+          scale: isHovered ? 1 : 0.85,
         }}
         transition={{ duration: 0.15 }}
       >
@@ -158,10 +177,12 @@ export function ShowcaseGallery({ items, projectTitle }: ShowcaseGalleryProps) {
     window.addEventListener("keydown", handleKeyDown);
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    document.body.dataset.lightboxOpen = "true";
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = originalOverflow;
+      delete document.body.dataset.lightboxOpen;
     };
   }, [activeImageIndex, handleClose, handleNext, handlePrev]);
 
@@ -170,7 +191,7 @@ export function ShowcaseGallery({ items, projectTitle }: ShowcaseGalleryProps) {
 
   return (
     <>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-7">
         {items.map((spotlight, idx) => {
           const isVideo =
             spotlight.media?.type === "video" ||
@@ -187,9 +208,9 @@ export function ShowcaseGallery({ items, projectTitle }: ShowcaseGalleryProps) {
             : -1;
 
           return (
-            <div key={idx} className="flex flex-col gap-3">
+            <div key={idx} className="flex flex-col gap-5">
               {isVideo && imageSrc ? (
-                <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-border bg-black select-none">
+                <div className="relative w-full aspect-[16/10] rounded-[4px] overflow-hidden border border-border bg-black select-none">
                   <video
                     src={imageSrc}
                     controls
@@ -209,7 +230,7 @@ export function ShowcaseGallery({ items, projectTitle }: ShowcaseGalleryProps) {
                   }}
                 />
               ) : (
-                <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-border bg-gradient-to-b from-muted/60 via-muted/30 to-muted/50 dark:from-muted/30 dark:via-muted/15 dark:to-muted/20 flex flex-col justify-between p-4 sm:p-5 select-none">
+                <div className="relative w-full aspect-[16/10] rounded-[4px] overflow-hidden border border-border bg-gradient-to-b from-muted/60 via-muted/30 to-muted/50 dark:from-muted/30 dark:via-muted/15 dark:to-muted/20 flex flex-col justify-between p-4 sm:p-5 select-none">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1.5">
                       <div className="size-2 rounded-full bg-foreground/15" />
@@ -221,7 +242,7 @@ export function ShowcaseGallery({ items, projectTitle }: ShowcaseGalleryProps) {
                     </div>
                   </div>
                   <div className="flex flex-col items-center justify-center gap-2 text-center my-auto">
-                    <div className="flex size-10 items-center justify-center rounded-lg border border-border/60 bg-background/50 backdrop-blur-xs text-foreground/40 shadow-xs">
+                    <div className="flex size-10 items-center justify-center rounded-[4px] border border-border/60 bg-background/50 backdrop-blur-xs text-foreground/40 shadow-xs">
                       <ImageIcon className="size-5" />
                     </div>
                     <span className="text-xs font-mono text-foreground/70">
@@ -232,24 +253,13 @@ export function ShowcaseGallery({ items, projectTitle }: ShowcaseGalleryProps) {
                 </div>
               )}
 
-              <div className="flex flex-row items-start gap-4">
-                <Typography
-                  variant="h3"
-                  className="w-4 shrink-0 pt-0.5 select-none font-mono"
-                >
+              <div className="flex flex-row items-start">
+                <Typography variant="h2" className="w-10 shrink-0 select-none">
                   {idx + 1}
                 </Typography>
                 <div className="flex flex-col gap-1">
-                  <Typography
-                    variant="h4"
-                    className="text-foreground/90 font-medium"
-                  >
-                    {spotlight.title}
-                  </Typography>
-                  <Typography
-                    variant="p"
-                    className="text-foreground/75 leading-[150%]"
-                  >
+                  <Typography variant="h4">{spotlight.title}</Typography>
+                  <Typography variant="p" className="leading-[150%]">
                     {spotlight.description}
                   </Typography>
                 </div>
@@ -323,7 +333,7 @@ export function ShowcaseGallery({ items, projectTitle }: ShowcaseGalleryProps) {
                   exit={{ scale: 0.95, opacity: 0 }}
                   transition={{ type: "spring", damping: 26, stiffness: 320 }}
                   onClick={(e) => e.stopPropagation()}
-                  className="relative max-h-[85vh] max-w-[90vw] rounded-xl overflow-hidden border border-white/15 shadow-2xl bg-black/60 flex items-center justify-center cursor-default"
+                  className="relative max-h-[85vh] max-w-[90vw] rounded-[4px] overflow-hidden border border-white/15 shadow-2xl bg-black/60 flex items-center justify-center cursor-default"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img

@@ -331,27 +331,53 @@ export const PROJECTS: Project[] = [
     ],
     showcase: [
       {
-        title: "Milestone Timeline",
+        title: "Main Keepsake Desktop",
         description:
-          "Interactive chronological relationship milestones with Motion gesture animations and smooth spring transitions.",
+          "Interactive digital desktop environment featuring personal milestone counters, ambient widgets, and customized navigation windows.",
         media: {
           type: "image",
+          src: "/projects/digital-loveprint/01-main-window.png",
+          alt: "Digital Loveprint main interactive desktop window",
         },
       },
       {
-        title: "Curated Memory Gallery",
+        title: "Memory Gallery Pop-Up",
         description:
-          "Responsive photo galleries with lightbox views, image zoom, and subtle ambient styling.",
+          "Interactive photo gallery modal showcasing relationship milestones and memories with responsive grid layouts.",
         media: {
           type: "image",
+          src: "/projects/digital-loveprint/02-popup-gallery.png",
+          alt: "Memory photo gallery pop-up modal",
         },
       },
       {
-        title: "Interactive Anniversary Letter",
+        title: "Relationship Milestone Counter",
         description:
-          "Animated personalized note with hidden easter eggs and ambient audio accompaniment.",
+          "Live anniversary counter tracking total days, hours, and minutes together with animated celebratory micro-interactions.",
         media: {
           type: "image",
+          src: "/projects/digital-loveprint/03-popup-since.png",
+          alt: "Anniversary and relationship milestone counter popup",
+        },
+      },
+      {
+        title: "Ambient Music Player Widget",
+        description:
+          "Custom audio player widget with music playback controls, interactive playlist selection, and ambient soundscapes.",
+        media: {
+          type: "image",
+          src: "/projects/digital-loveprint/05-popup-music.png",
+          alt: "Ambient audio and playlist music player popup",
+        },
+      },
+      {
+        title: "Multi-Window Experience Overview",
+        description:
+          "Complete overview displaying multiple interactive draggable pop-up windows open simultaneously across the viewport.",
+        media: {
+          type: "image",
+          src: "/projects/digital-loveprint/06-all-popups-overview.png",
+          alt: "Full desktop overview showing all active interactive pop-up windows",
         },
       },
     ],

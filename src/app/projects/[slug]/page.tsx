@@ -140,7 +140,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <Typography variant="h1">showcase</Typography>
           {videoData ? (
             <div className="flex flex-col gap-3">
-              <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-border bg-black shadow-xs">
+              <div className="relative w-full aspect-[16/10] rounded-[4px] overflow-hidden border border-border bg-black shadow-xs">
                 <video
                   src={videoData.src}
                   poster={videoData.poster}

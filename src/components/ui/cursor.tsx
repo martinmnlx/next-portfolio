@@ -35,8 +35,9 @@ export function Cursor() {
 
   return (
     <motion.div
+      data-cursor
       aria-hidden="true"
-      className="pointer-events-none fixed top-0 left-0 z-[100] size-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black transition-opacity duration-200 dark:bg-white hidden md:block"
+      className="pointer-events-none fixed top-0 left-0 z-[9999] size-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black transition-opacity duration-200 dark:bg-white hidden md:block"
       style={{
         x: smoothX,
         y: smoothY,
