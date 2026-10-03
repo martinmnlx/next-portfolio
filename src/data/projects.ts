@@ -208,27 +208,33 @@ export const PROJECTS: Project[] = [
     ],
     showcase: [
       {
-        title: "Establishment Discovery & Directory",
+        title: "Landing & Discovery Portal",
         description:
-          "Curated directory of student spots with verified ratings, student-friendly price indicators, and category filtering.",
+          "Welcome portal highlighting trending Taft Avenue establishments, featured dining spots, and community review highlights.",
         media: {
           type: "image",
+          src: "/projects/taftics/landing.png",
+          alt: "Taftics landing page and discovery portal",
         },
       },
       {
-        title: "Community Review Feed",
+        title: "Establishment Directory & Filters",
         description:
-          "Crowd-sourced establishment reviews with photo uploads, helpfulness upvotes, and community recommendation badges.",
+          "Curated directory of student spots with category filters, price-range indicators, and verified community ratings.",
         media: {
           type: "image",
+          src: "/projects/taftics/browse.png",
+          alt: "Browse directory with search and category filters",
         },
       },
       {
-        title: "Interactive Taft Map",
+        title: "Establishment Details & Review Feed",
         description:
-          "Map-based venue exploration along Taft Avenue highlighting walking distances and neighborhood favorites.",
+          "Detailed venue profiles featuring student ratings, photo attachments, menu information, and community upvoting.",
         media: {
           type: "image",
+          src: "/projects/taftics/individual-review.png",
+          alt: "Individual establishment page with detailed review feed",
         },
       },
     ],
