@@ -33,6 +33,10 @@ const TECH_STACK = [
     category: "tools",
     items: ["Git", "GitHub", "VS Code", "Figma", "Vercel", "Vite"],
   },
+  {
+    category: "ai",
+    items: ["Codex", "Gemini"],
+  },
 ];
 
 const EDUCATION = [

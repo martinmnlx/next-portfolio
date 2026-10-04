@@ -8,7 +8,6 @@ import { PROJECTS, getProjectBySlug, type ProjectVideo } from "@/data/projects";
 import { Undo2 } from "lucide-react";
 import { ShowcaseGallery } from "@/components/ui/showcase-gallery";
 
-const OVERVIEW_LABELS = ["p", "s"];
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
