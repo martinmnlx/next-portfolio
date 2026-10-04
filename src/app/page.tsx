@@ -15,7 +15,14 @@ const TECH_STACK = [
   },
   {
     category: "frontend",
-    items: ["React", "Next.js", "Tailwind CSS", "Bootstrap", "HTML/CSS"],
+    items: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Bootstrap",
+      "HTML/CSS",
+      "Vite",
+    ],
   },
   {
     category: "libraries",
@@ -31,11 +38,11 @@ const TECH_STACK = [
   },
   {
     category: "tools",
-    items: ["Git", "GitHub", "VS Code", "Figma", "Vercel", "Vite"],
+    items: ["Git", "GitHub", "VS Code", "Figma", "Vercel", "Slack", "Jira"],
   },
   {
     category: "ai",
-    items: ["Codex", "Gemini"],
+    items: ["ChatGPT", "Codex", "Gemini"],
   },
 ];
 
@@ -181,7 +188,7 @@ export default function Home() {
             >
               <Typography
                 variant={"h2"}
-                className="w-30 md:w-50 shrink-0 select-none whitespace-nowrap"
+                className="w-30 md:w-40 shrink-0 select-none whitespace-nowrap"
               >
                 {category}
               </Typography>
@@ -203,7 +210,7 @@ export default function Home() {
             <div key={label} className="flex flex-row items-baseline">
               <Typography
                 variant={"h2"}
-                className="w-30 md:w-50 shrink-0 select-none whitespace-nowrap"
+                className="w-30 md:w-40 shrink-0 select-none whitespace-nowrap"
               >
                 {label}
               </Typography>
