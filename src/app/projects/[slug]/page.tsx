@@ -4,6 +4,7 @@ import { ViewTransition } from "react";
 import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Typography } from "@/components/ui/typography";
+import { FormattedText } from "@/components/ui/formatted-text";
 import { PROJECTS, getProjectBySlug, type ProjectVideo } from "@/data/projects";
 import { Undo2 } from "lucide-react";
 import { ShowcaseGallery } from "@/components/ui/showcase-gallery";
@@ -33,7 +34,7 @@ export async function generateMetadata({
 
   return {
     title: `${project.title} | Martin Manalo`,
-    description: project.overview[0],
+    description: project.overview[0]?.replace(/\*\*/g, ""),
   };
 }
 
@@ -93,7 +94,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           {project.overview.map((paragraph, idx) => (
             <div key={idx} className="flex flex-row items-start">
               <Typography variant="p" className="leading-[150%]">
-                {paragraph}
+                <FormattedText text={paragraph} />
               </Typography>
             </div>
           ))}
@@ -120,7 +121,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 {idx + 1}
               </Typography>
               <Typography variant="p" className="leading-[150%]">
-                {item}
+                <FormattedText text={item} />
               </Typography>
             </div>
           ))}
@@ -165,9 +166,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     {videoData.description && (
                       <Typography
                         variant="p"
-                        className="text-foreground/75 leading-[150%]"
+                        className="leading-[150%]"
                       >
-                        {videoData.description}
+                        <FormattedText text={videoData.description} />
                       </Typography>
                     )}
                   </div>

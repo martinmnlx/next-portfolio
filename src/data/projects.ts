@@ -331,7 +331,7 @@ export const PROJECTS: Project[] = [
     period: "Aug 2025",
     year: 2025,
     overview: [
-      "A digital time capsule I made for my girlfriend as an early anniversary gift, mimicing retro browser UI with interactive draggable tabs. My first side project focusing on frontend styling with Tailwind and development with vanilla HTML, CSS, and JavaScript.",
+      "Digital Loveprint is a digital time capsule I made for my girlfriend as an early anniversary gift, mimicing retro browser UI with interactive draggable tabs. My first side project focusing on frontend styling with Tailwind and development with vanilla HTML, CSS, and JavaScript.",
     ],
     stack: ["HTML/CSS", "JavaScript", "Tailwind CSS"],
     contributions: [
@@ -406,15 +406,9 @@ export const PROJECTS: Project[] = [
     period: "Jan 2025 - Apr 2025",
     year: 2025,
     overview: [
-      "Crown of Vengeance is an object-oriented turn-based 2D fighting game developed in Java, featuring strategic combat, distinct character classes, and customizable ability skill-trees.",
-      "Architected adhering to strict OOP principles, custom game loop states, and dynamic turn-sequencing mechanics.",
+      "Crown of Vengeance, my final project for **CCPROG3: Object-Oriented Programming**, is a turn-based 2D fighting game developed in Java. It introduced me to concepts like OOP principles, MVC architecture, GUI integration, and basic game engines.",
     ],
-    stack: [
-      "Java",
-      "JavaFX",
-      "Object-Oriented Programming",
-      "MVC Architecture",
-    ],
+    stack: ["Java", "JavaFX"],
     contributions: [
       "Implemented character class inheritance hierarchies, polymorphic ability trees, and combat state calculations.",
       "Programmed turn-based combat battle loop with initiative queues and damage calculation algorithms.",

@@ -23,6 +23,7 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import { Typography } from "@/components/ui/typography";
+import { FormattedText } from "@/components/ui/formatted-text";
 import type { ProjectSpotlight } from "@/data/projects";
 
 interface ShowcaseGalleryProps {
@@ -96,9 +97,9 @@ function InteractiveScreenshotCard({
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full aspect-[16/10] select-none cursor-default md:cursor-zoom-in"
+      className="relative w-full aspect-16/10 select-none cursor-default md:cursor-zoom-in"
     >
-      <div className="relative w-full h-full rounded-[4px] overflow-hidden border border-border bg-gradient-to-b from-muted/60 via-muted/30 to-muted/50 dark:from-muted/30 dark:via-muted/15 dark:to-muted/20">
+      <div className="relative w-full h-full rounded-lg overflow-hidden bg-linear-to-b from-muted/60 via-muted/30 to-muted/50 dark:from-muted/30 dark:via-muted/15 dark:to-muted/20">
         <Image
           src={src}
           alt={alt}
@@ -111,7 +112,7 @@ function InteractiveScreenshotCard({
       {/* Cursor-following badge */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute top-0 left-0 z-20 hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded-[4px] bg-background/90 text-foreground backdrop-blur-md border border-border/80 shadow-md text-xs font-mono tracking-tight -translate-x-1/2 -translate-y-[calc(100%+8px)] whitespace-nowrap"
+        className="pointer-events-none absolute top-0 left-0 z-20 hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-background/90 text-foreground backdrop-blur-md shadow-md text-xs font-mono tracking-tight -translate-x-1/2 -translate-y-[calc(100%+8px)] whitespace-nowrap"
         style={{
           x: smoothX,
           y: smoothY,
@@ -223,7 +224,7 @@ export function ShowcaseGallery({ items, projectTitle }: ShowcaseGalleryProps) {
           return (
             <div key={idx} className="flex flex-col gap-5">
               {isVideo && imageSrc ? (
-                <div className="relative w-full aspect-[16/10] rounded-[4px] overflow-hidden border border-border bg-black select-none">
+                <div className="relative w-full aspect-16/10 rounded-lg overflow-hidden bg-black select-none">
                   <video
                     src={imageSrc}
                     controls
@@ -243,7 +244,7 @@ export function ShowcaseGallery({ items, projectTitle }: ShowcaseGalleryProps) {
                   }}
                 />
               ) : (
-                <div className="relative w-full aspect-[16/10] rounded-[4px] overflow-hidden border border-border bg-gradient-to-b from-muted/60 via-muted/30 to-muted/50 dark:from-muted/30 dark:via-muted/15 dark:to-muted/20 flex flex-col justify-between p-4 sm:p-5 select-none">
+                <div className="relative w-full aspect-16/10 rounded-lg overflow-hidden bg-linear-to-b from-muted/60 via-muted/30 to-muted/50 dark:from-muted/30 dark:via-muted/15 dark:to-muted/20 flex flex-col justify-between p-4 sm:p-5 select-none">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1.5">
                       <div className="size-2 rounded-full bg-foreground/15" />
@@ -255,7 +256,7 @@ export function ShowcaseGallery({ items, projectTitle }: ShowcaseGalleryProps) {
                     </div>
                   </div>
                   <div className="flex flex-col items-center justify-center gap-2 text-center my-auto">
-                    <div className="flex size-10 items-center justify-center rounded-[4px] border border-border/60 bg-background/50 backdrop-blur-xs text-foreground/40 shadow-xs">
+                    <div className="flex size-10 items-center justify-center rounded-lg bg-background/50 backdrop-blur-xs text-foreground/40 shadow-xs">
                       <ImageIcon className="size-5" />
                     </div>
                     <span className="text-xs font-mono text-foreground/70">
@@ -273,7 +274,7 @@ export function ShowcaseGallery({ items, projectTitle }: ShowcaseGalleryProps) {
                 <div className="flex flex-col gap-1">
                   <Typography variant="h4">{spotlight.title}</Typography>
                   <Typography variant="p" className="leading-[150%]">
-                    {spotlight.description}
+                    <FormattedText text={spotlight.description} />
                   </Typography>
                 </div>
               </div>
@@ -293,7 +294,7 @@ export function ShowcaseGallery({ items, projectTitle }: ShowcaseGalleryProps) {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
                 onClick={handleClose}
-                className="fixed inset-0 z-[120] flex items-center justify-center p-4 sm:p-8 md:p-12 bg-black/80 dark:bg-black/85 backdrop-blur-md select-none"
+                className="fixed inset-0 z-120 flex items-center justify-center p-4 sm:p-8 md:p-12 bg-black/80 dark:bg-black/85 backdrop-blur-md select-none"
               >
                 {/* Close Button */}
                 <button
@@ -303,7 +304,7 @@ export function ShowcaseGallery({ items, projectTitle }: ShowcaseGalleryProps) {
                     e.stopPropagation();
                     handleClose();
                   }}
-                  className="absolute top-4 right-4 sm:top-6 sm:right-6 z-30 flex size-9 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white/90 hover:text-white backdrop-blur-md border border-white/15 transition-all active:scale-95 cursor-pointer shadow-lg"
+                  className="absolute top-4 right-4 sm:top-6 sm:right-6 z-30 flex size-9 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white/90 hover:text-white backdrop-blur-md transition-all active:scale-95 cursor-pointer shadow-lg"
                 >
                   <X className="size-5" />
                 </button>
@@ -317,7 +318,7 @@ export function ShowcaseGallery({ items, projectTitle }: ShowcaseGalleryProps) {
                       e.stopPropagation();
                       handlePrev();
                     }}
-                    className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 flex size-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/25 text-white/90 hover:text-white backdrop-blur-md border border-white/15 transition-all active:scale-95 cursor-pointer shadow-lg"
+                    className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 flex size-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/25 text-white/90 hover:text-white backdrop-blur-md transition-all active:scale-95 cursor-pointer shadow-lg"
                   >
                     <ChevronLeft className="size-6" />
                   </button>
@@ -332,7 +333,7 @@ export function ShowcaseGallery({ items, projectTitle }: ShowcaseGalleryProps) {
                       e.stopPropagation();
                       handleNext();
                     }}
-                    className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 flex size-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/25 text-white/90 hover:text-white backdrop-blur-md border border-white/15 transition-all active:scale-95 cursor-pointer shadow-lg"
+                    className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 flex size-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/25 text-white/90 hover:text-white backdrop-blur-md transition-all active:scale-95 cursor-pointer shadow-lg"
                   >
                     <ChevronRight className="size-6" />
                   </button>
@@ -346,7 +347,7 @@ export function ShowcaseGallery({ items, projectTitle }: ShowcaseGalleryProps) {
                   exit={{ scale: 0.95, opacity: 0 }}
                   transition={{ type: "spring", damping: 26, stiffness: 320 }}
                   onClick={(e) => e.stopPropagation()}
-                  className="relative max-h-[85vh] max-w-[90vw] rounded-[4px] overflow-hidden border border-white/15 shadow-2xl bg-black/60 flex items-center justify-center cursor-default"
+                  className="relative max-h-[85vh] max-w-[90vw] rounded-lg overflow-hidden shadow-2xl bg-black/60 flex items-center justify-center cursor-default"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
