@@ -38,8 +38,8 @@ export interface Project {
 export const PROJECTS: Project[] = [
   {
     slug: "soa-manager",
-    title: "Statement-of-Account (SOA) Manager",
-    role: "full stack engineer",
+    title: "Statement of Account (SOA) Manager",
+    role: "Full Stack Engineer",
     type: "work",
     period: "Apr 2026 - Present",
     year: 2026,
@@ -136,7 +136,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "talentados",
     title: "Talentados: Applicant Tracking System",
-    role: "backend engineer",
+    role: "Backend Engineer",
     type: "school",
     period: "May 2026 - Aug 2026",
     year: 2026,
@@ -184,7 +184,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "taftics",
     title: "Taftics: Establishment Review App",
-    role: "full stack engineer",
+    role: "Full Stack Engineer",
     type: "school",
     period: "Jan 2026 - Apr 2026",
     year: 2026,
@@ -249,7 +249,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "callbot",
     title: "CallBot: Discord Voice Call Analytics Bot",
-    role: "backend engineer",
+    role: "Backend Engineer",
     type: "personal",
     period: "Sep 2026 - Present",
     year: 2026,
@@ -296,7 +296,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "eventbuddy",
     title: "EventBuddy: Hall Reservation System",
-    role: "frontend engineer",
+    role: "Frontend Engineer",
     type: "school",
     period: "Oct 2025 - Dec 2025",
     year: 2025,
@@ -321,7 +321,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "digital-loveprint",
     title: "Digital Loveprint: For My Girlfriend",
-    role: "frontend engineer",
+    role: "Frontend Engineer",
     type: "personal",
     period: "Aug 2025",
     year: 2025,
@@ -390,14 +390,14 @@ export const PROJECTS: Project[] = [
     links: [{ label: "GitHub Repo", href: "https://github.com/martinmnlx" }],
   },
   {
-    slug: "sword-of-vengeance",
-    title: "Sword of Vengeance: Turn-Based Fighting Game",
-    role: "java engineer",
+    slug: "crown-of-vengeance",
+    title: "Crown of Vengeance: Turn-Based Fighting Game",
+    role: "Java Engineer",
     type: "school",
     period: "Jan 2025 - Apr 2025",
     year: 2025,
     overview: [
-      "Sword of Vengeance is an object-oriented turn-based 2D fighting game developed in Java, featuring strategic combat, distinct character classes, and customizable ability skill-trees.",
+      "Crown of Vengeance is an object-oriented turn-based 2D fighting game developed in Java, featuring strategic combat, distinct character classes, and customizable ability skill-trees.",
       "Architected adhering to strict OOP principles, custom game loop states, and dynamic turn-sequencing mechanics.",
     ],
     stack: [
@@ -412,7 +412,7 @@ export const PROJECTS: Project[] = [
       "Designed dynamic 2D UI status bars, combat log readouts, and character animation sprites with JavaFX.",
     ],
     video: {
-      src: "/projects/sword-of-vengeance/crown-of-vengeance.mp4",
+      src: "/projects/crown-of-vengeance/crown-of-vengeance.mp4",
       title: "Combat Arena & Gameplay Demo",
       description:
         "Gameplay walkthrough of the JavaFX turn-based combat system, character class abilities, damage calculations, and skill tree progression.",

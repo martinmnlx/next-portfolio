@@ -19,7 +19,7 @@ const TECH_STACK = [
   },
   {
     category: "libraries",
-    items: ["shadcn/ui", "Radix UI", "Zustand", "Motion"],
+    items: ["shadcn/ui", "Radix UI", "Motion", "Playwright"],
   },
   {
     category: "backend",
@@ -27,7 +27,7 @@ const TECH_STACK = [
   },
   {
     category: "database",
-    items: ["Supabase", "MongoDB", "MySQL"],
+    items: ["Supabase", "MongoDB", "MySQL", "SQLite "],
   },
   {
     category: "tools",
@@ -78,7 +78,7 @@ const CONNECT_LINKS = [
 
 export default function Home() {
   return (
-    <main className="flex flex-col w-160 px-5 gap-10">
+    <main className="flex flex-col w-full md:w-160 px-5 gap-10">
       <div className="flex flex-row items-center gap-4">
         <Image
           src="/me+ironman.jpg"
@@ -96,6 +96,8 @@ export default function Home() {
           className="h-10 w-auto object-contain dark:invert select-none pointer-events-none opacity-80"
         />
       </div>
+
+      {/* About Section */}
       <section id="about" className="flex flex-col gap-5 scroll-mt-20">
         <Typography variant={"h1"}>Hello!</Typography>
         <Typography variant={"p"}>
@@ -113,6 +115,7 @@ export default function Home() {
         </Typography>
       </section>
 
+      {/* Projects Section */}
       <section id="projects" className="flex flex-col gap-5 scroll-mt-20">
         <Typography variant={"h1"}>projects</Typography>
         <div className="flex flex-col gap-5">
@@ -154,7 +157,7 @@ export default function Home() {
                     <Badge variant="mono">{type}</Badge>
                   </ViewTransition>
                   <ViewTransition name={`project-role-${slug}`}>
-                    <Typography variant={"h3"}>{role}</Typography>
+                    <Typography variant={"p"}>{role}</Typography>
                   </ViewTransition>
                 </div>
               </Link>
@@ -163,14 +166,18 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Stack Section */}
       <section id="stack" className="flex flex-col gap-5 scroll-mt-20">
         <Typography variant={"h1"}>stack</Typography>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-5 md:gap-3">
           {TECH_STACK.map(({ category, items }) => (
-            <div key={category} className="flex flex-row items-center">
+            <div
+              key={category}
+              className="flex flex-row items-baseline md:pb-0"
+            >
               <Typography
                 variant={"h2"}
-                className="w-50 shrink-0 select-none whitespace-nowrap"
+                className="w-30 md:w-50 shrink-0 select-none whitespace-nowrap"
               >
                 {category}
               </Typography>
@@ -184,6 +191,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Education Section */}
       <section id="education" className="flex flex-col gap-5 scroll-mt-20">
         <Typography variant={"h1"}>education</Typography>
         <div className="flex flex-col gap-3">
@@ -191,7 +199,7 @@ export default function Home() {
             <div key={label} className="flex flex-row items-baseline">
               <Typography
                 variant={"h2"}
-                className="w-50 shrink-0 select-none whitespace-nowrap"
+                className="w-30 md:w-50 shrink-0 select-none whitespace-nowrap"
               >
                 {label}
               </Typography>
@@ -203,6 +211,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Connect Section */}
       <section id="connect" className="flex flex-col gap-5 scroll-mt-20">
         <Typography variant={"h1"}>connect</Typography>
         <Typography variant={"p"}>

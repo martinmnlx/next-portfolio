@@ -84,14 +84,19 @@ function InteractiveScreenshotCard({
     setIsHovered(false);
   };
 
+  const handleClick = () => {
+    if (typeof window !== "undefined" && window.innerWidth < 768) return;
+    onOpen();
+  };
+
   return (
     <div
       ref={cardRef}
-      onClick={onOpen}
+      onClick={handleClick}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full aspect-[16/10] select-none cursor-zoom-in"
+      className="relative w-full aspect-[16/10] select-none cursor-default md:cursor-zoom-in"
     >
       <div className="relative w-full h-full rounded-[4px] overflow-hidden border border-border bg-gradient-to-b from-muted/60 via-muted/30 to-muted/50 dark:from-muted/30 dark:via-muted/15 dark:to-muted/20">
         <Image
@@ -160,7 +165,7 @@ export function ShowcaseGallery({ items, projectTitle }: ShowcaseGalleryProps) {
     setActiveImageIndex(null);
   }, []);
 
-  // Keyboard navigation & scroll locking
+  // Keyboard navigation, resize listener & scroll locking
   useEffect(() => {
     if (activeImageIndex === null) return;
 
@@ -174,13 +179,21 @@ export function ShowcaseGallery({ items, projectTitle }: ShowcaseGalleryProps) {
       }
     };
 
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        handleClose();
+      }
+    };
+
     window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("resize", handleResize);
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     document.body.dataset.lightboxOpen = "true";
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("resize", handleResize);
       document.body.style.overflow = originalOverflow;
       delete document.body.dataset.lightboxOpen;
     };

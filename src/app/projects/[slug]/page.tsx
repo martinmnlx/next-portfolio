@@ -53,10 +53,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     : null;
 
   return (
-    <main className="flex flex-col w-160 px-5 gap-10">
+    <main className="flex flex-col w-full md:w-160 px-5 gap-10">
       {/* Top Header & Project Identity */}
       <div className="flex flex-col gap-5">
-        <div className="flex flex-row items-center gap-4">
+        <div className="flex flex-row items-center gap-5">
           <Typography variant="h1">project</Typography>
           <Link
             href="/"
@@ -74,14 +74,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <ViewTransition name={`project-title-${project.slug}`}>
               <Typography variant="h4">{project.title}</Typography>
             </ViewTransition>
-            <Typography variant="h3">{project.period}</Typography>
+            {/* <Typography variant="h3">{project.period}</Typography> */}
           </div>
           <div className="flex flex-row items-center gap-2">
             <ViewTransition name={`project-badge-${project.slug}`}>
               <Badge variant="mono">{project.type}</Badge>
             </ViewTransition>
             <ViewTransition name={`project-role-${project.slug}`}>
-              <Typography variant="h3">{project.role}</Typography>
+              <Typography variant="p">{project.role}</Typography>
             </ViewTransition>
           </div>
         </div>
@@ -93,12 +93,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <div className="flex flex-col gap-3">
           {project.overview.map((paragraph, idx) => (
             <div key={idx} className="flex flex-row items-start">
-              <Typography
-                variant="h2"
-                className="w-10 shrink-0 select-none font-mono"
-              >
-                {OVERVIEW_LABELS[idx] ?? idx + 1}
-              </Typography>
               <Typography variant="p" className="leading-[150%]">
                 {paragraph}
               </Typography>
