@@ -9,7 +9,6 @@ import { PROJECTS, getProjectBySlug, type ProjectVideo } from "@/data/projects";
 import { Undo2 } from "lucide-react";
 import { ShowcaseGallery } from "@/components/ui/showcase-gallery";
 
-
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
 }
@@ -133,8 +132,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <div className="flex flex-col gap-5">
           <Typography variant="h1">showcase</Typography>
           {videoData ? (
-            <div className="flex flex-col gap-3">
-              <div className="relative w-full aspect-[16/10] rounded-[4px] overflow-hidden border border-border bg-black shadow-xs">
+            <div className="flex flex-col gap-5">
+              <div className="relative w-full aspect-16/10 rounded-lg overflow-hidden border border-border bg-black shadow-xs">
                 <video
                   src={videoData.src}
                   poster={videoData.poster}
@@ -147,27 +146,15 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 </video>
               </div>
               {(videoData.title || videoData.description) && (
-                <div className="flex flex-row items-start gap-4">
-                  <Typography
-                    variant="h3"
-                    className="w-4 shrink-0 pt-0.5 select-none font-mono"
-                  >
-                    1
-                  </Typography>
+                <div className="flex flex-row items-start gap-5">
                   <div className="flex flex-col gap-1">
                     {videoData.title && (
-                      <Typography
-                        variant="h4"
-                        className="text-foreground/90 font-medium"
-                      >
+                      <Typography variant="p" className="text-foreground/75">
                         {videoData.title}
                       </Typography>
                     )}
                     {videoData.description && (
-                      <Typography
-                        variant="p"
-                        className="leading-[150%]"
-                      >
+                      <Typography variant="p" className="leading-[150%]">
                         <FormattedText text={videoData.description} />
                       </Typography>
                     )}

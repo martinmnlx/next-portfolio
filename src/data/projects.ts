@@ -301,10 +301,9 @@ export const PROJECTS: Project[] = [
     period: "Oct 2025 - Dec 2025",
     year: 2025,
     overview: [
-      "EventBuddy is an online hall and multipurpose venue reservation management platform designed to streamline room scheduling, prevent double-bookings, and coordinate event logistics across university organizations.",
-      "Features interactive venue availability calendars, automated reservation request reviews, and administrative approval pipelines.",
+      "EventBuddy, my final project for **CCINFOM: Information Management**, is a simple database application for booking event halls and managing related records. It introduced me to concepts like database schemas/architecture, SQL queries, and CRUD operations.",
     ],
-    stack: ["Java", "JSwing", "Java Database Connectivity (JDBC)", "MySQL"],
+    stack: ["Java", "JSwing", "JDBC", "MySQL"],
     contributions: [
       "Built responsive interactive calendar and venue slot booking interfaces with dynamic conflict-checking.",
       "Designed administrative dashboard for managing venue bookings, equipment checklists, and approval queues.",
@@ -312,9 +311,9 @@ export const PROJECTS: Project[] = [
     ],
     video: {
       src: "/projects/eventbuddy/eventbuddy.mp4",
-      title: "Interactive Hall Reservation Demo",
+      title: "App Demo",
       description:
-        "Full demonstration of interactive venue availability calendars, multi-step booking request flows, and administrative approvals.",
+        "Walkthrough of the various CRUD features in the application.",
     },
     links: [
       {
@@ -410,15 +409,17 @@ export const PROJECTS: Project[] = [
     ],
     stack: ["Java", "JavaFX"],
     contributions: [
-      "Implemented character class inheritance hierarchies, polymorphic ability trees, and combat state calculations.",
-      "Programmed turn-based combat battle loop with initiative queues and damage calculation algorithms.",
-      "Designed dynamic 2D UI status bars, combat log readouts, and character animation sprites with JavaFX.",
+      "Programmed the core battle logic, allowing players and CPU enemies to attack, defend, charge for double damage, or use healing items, with turn order based on speed.",
+      "Developed a pre-battle shop where players spend gold on armor, weapons, and healing potions with unique stat modifiers and special abilities.",
+      "Created distinct fighting styles for different opponents (Faux AI), and battlefields that dynamically affect combat by buffing or draining player and enemy stats each round.",
+      "Built the complete GUI inspired by retro fighting games, including animated health bars, action buttons, modal dialogues, and an audio system.",
+      "Refactored the game engine and code structure from CLI to MVC architecture with a shared model, enabling it to be played in both the GUI and terminal.",
     ],
     video: {
       src: "/projects/crown-of-vengeance/crown-of-vengeance.mp4",
-      title: "Combat Arena & Gameplay Demo",
+      title: "Gameplay Demo",
       description:
-        "Gameplay walkthrough of the JavaFX turn-based combat system, character class abilities, damage calculations, and skill tree progression.",
+        "Walkthrough of the complete game cycle, from shop to battle.",
     },
     links: [
       {
