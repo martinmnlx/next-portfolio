@@ -257,7 +257,7 @@ export const PROJECTS: Project[] = [
       "An automated Discord bot that passively tracks, aggregates, and visualizes voice channel activity, user engagement trends, and duration statistics within gaming and study communities.",
       "Provides real-time activity heatmaps, weekly voice leaderboards, and server health analytics through automated Discord embed reporting.",
     ],
-    stack: ["TypeScript", "Node.js", "Discord.js", "SQLite", "Better-SQLite3"],
+    stack: ["TypeScript", "Node.js", "Discord.js", "SQLite"],
     contributions: [
       "Developed event listeners to track voice channel joins, leaves, mutes, and deafens with millisecond precision.",
       "Engineered an efficient SQLite persistence layer recording session durations and aggregated weekly leaderboards.",
@@ -316,7 +316,12 @@ export const PROJECTS: Project[] = [
       description:
         "Full demonstration of interactive venue availability calendars, multi-step booking request flows, and administrative approvals.",
     },
-    links: [{ label: "GitHub Repo", href: "https://github.com/martinmnlx" }],
+    links: [
+      {
+        label: "GitHub Repo",
+        href: "https://github.com/martinmnlx/eventbuddy",
+      },
+    ],
   },
   {
     slug: "digital-loveprint",
@@ -326,14 +331,13 @@ export const PROJECTS: Project[] = [
     period: "Aug 2025",
     year: 2025,
     overview: [
-      "A creative and interactive digital keepsake crafted as a personal anniversary experience, featuring custom animations, a timeline of relationship milestones, and interactive photo galleries.",
-      "Engineered with delicate UI micro-interactions, smooth page transitions, and responsive mobile-first layouts.",
+      "A digital time capsule I made for my girlfriend as an early anniversary gift, mimicing retro browser UI with interactive draggable tabs. My first side project focusing on frontend styling with Tailwind and development with vanilla HTML, CSS, and JavaScript.",
     ],
-    stack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Motion"],
+    stack: ["HTML/CSS", "JavaScript", "Tailwind CSS"],
     contributions: [
-      "Designed and animated interactive milestone timeline cards with Motion gesture controls.",
-      "Crafted custom photo album galleries with responsive aspect ratios and lightboxes.",
-      "Integrated audio playback and personalized ambient interactive easter eggs.",
+      "Designed the UI based on the aesthetic of retro browsers.",
+      "Created tabs for a scrollable gallery, time counter, love letter, and music player.",
+      "Added scripting for the tabs interactive, overlapping, and draggable behavior.",
     ],
     showcase: [
       {
@@ -387,7 +391,12 @@ export const PROJECTS: Project[] = [
         },
       },
     ],
-    links: [{ label: "GitHub Repo", href: "https://github.com/martinmnlx" }],
+    links: [
+      {
+        label: "GitHub Repo",
+        href: "https://github.com/martinmnlx/digital-loveprint",
+      },
+    ],
   },
   {
     slug: "crown-of-vengeance",
@@ -417,7 +426,12 @@ export const PROJECTS: Project[] = [
       description:
         "Gameplay walkthrough of the JavaFX turn-based combat system, character class abilities, damage calculations, and skill tree progression.",
     },
-    links: [{ label: "GitHub Repo", href: "https://github.com/martinmnlx" }],
+    links: [
+      {
+        label: "GitHub Repo",
+        href: "https://github.com/martinmnlx/crown-of-vengeance",
+      },
+    ],
   },
 ];
 
