@@ -40,7 +40,7 @@ export const PROJECTS: Project[] = [
     slug: "soa-manager",
     title: "Statement of Account (SOA) Manager",
     role: "Full Stack Engineer",
-    type: "work",
+    type: "freelance",
     period: "Apr 2026 - Present",
     year: 2026,
     overview: [
@@ -189,8 +189,7 @@ export const PROJECTS: Project[] = [
     period: "Jan 2026 - Apr 2026",
     year: 2026,
     overview: [
-      "Taftics is a crowd-sourced establishment discovery and review web application built for the De La Salle University student community along Taft Avenue.",
-      "Allows students to discover dining spots, study spaces, and local services with student-verified ratings, reviews, menu details, and budget estimates.",
+      "Taftics, my final project for **CCAPDEV: Web Application Development**, is a crowd-sourced establishment discovery and review web application built for the De La Salle University student community along Taft Avenue.",
     ],
     stack: [
       "React",
@@ -248,7 +247,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "callbot",
-    title: "CallBot: Discord Voice Call Analytics Bot",
+    title: "CallBot: Discord Voice Call Analytics Bot (WIP)",
     role: "Backend Engineer",
     type: "personal",
     period: "Sep 2026 - Present",
@@ -296,18 +295,21 @@ export const PROJECTS: Project[] = [
   {
     slug: "eventbuddy",
     title: "EventBuddy: Hall Reservation System",
-    role: "Frontend Engineer",
+    role: "Full Stack Engineer",
     type: "school",
     period: "Oct 2025 - Dec 2025",
     year: 2025,
     overview: [
       "EventBuddy, my final project for **CCINFOM: Information Management**, is a simple database application for booking event halls and managing related records. It introduced me to concepts like database schemas/architecture, SQL queries, and CRUD operations.",
     ],
-    stack: ["Java", "JSwing", "JDBC", "MySQL"],
+    stack: ["Java", "Java Swing", "MySQL", "JDBC", "Lombok"],
     contributions: [
-      "Built responsive interactive calendar and venue slot booking interfaces with dynamic conflict-checking.",
-      "Designed administrative dashboard for managing venue bookings, equipment checklists, and approval queues.",
-      "Engineered client-side form validation and multi-step venue reservation request flows.",
+      "Architected the Java desktop application structure and navigation, adding basic user authentication and dedicated views for clients and admins.",
+      "Built the client booking portal for users to browse event halls, filter via SQL queries, make detailed reservations, view booking breakdowns, and manage cancellations.",
+      "Engineered the end-to-end reservation service and lifecycle, adding automated checks for booking date conflicts and guest over-capacity.",
+      "Implemented equipment allocation, allowing clients to bundle event equipment with their venue reservations, automatically tracking daily stock to prevent over-allocation.",
+      "Built the centralized admin management suite to manage (view, edit, create, and delete) database records (event halls, equipment, user accounts, and staff assignments).",
+      "Developed the report generator to help admins analyze business metrics, with charts for monthly booking trends, hall utilization rates, and equipment popularity.",
     ],
     video: {
       src: "/projects/eventbuddy/eventbuddy.mp4",
